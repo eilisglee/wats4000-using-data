@@ -1,17 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Rhymesaurus from '@/views/Rhymesaurus'
-// TODO: Import new component
+import Associated from '@/views/Associated'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
     name: 'Rhymesaurus',
     component: Rhymesaurus
+  },
+  {
+    path: '/associated',
+    name: 'Associated',
+    component: Associated
   }
-  // TODO: Add new route definition here
 ]
 
 const router = new VueRouter({

@@ -1,10 +1,11 @@
 <template>
-  <div class="rhymesaurus">
+  <div class="associated">
     <form v-on:submit.prevent="findWords">
       <!-- Submit event handler to allow the findWords method to handle form submission. -->
       <p>
-        Find rhymes for
-        <input type="text" v-model="rhyme" /> related to
+        Find words associated with
+        <!-- <input type="text" v-model="rhyme" />  -->
+        <!-- related to -->
         <input type="text" v-model="phrase" />
         <button type="submit">Search</button>
       </p>
@@ -47,13 +48,13 @@
 // Import axios
 import axios from "axios";
 export default {
-  name: "Rhymesaurus",
+  name: "Associated",
   data() {
     return {
       results: null,
       errors: [],
-      phrase: "",
-      rhyme: ""
+      phrase: ""
+      // rhyme: ""
     };
   },
   // findWords method
@@ -62,8 +63,8 @@ export default {
       axios
         .get("https://api.datamuse.com/words", {
           params: {
-            ml: this.phrase,
-            rel_rhy: this.rhyme
+            rel_trg: this.phrase
+            // rel_rhy: this.rhyme
           }
         })
         .then(response => {
@@ -88,7 +89,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.rhymesaurus {
+.associated {
   font-size: 1.4rem;
 }
 input[type="text"] {
