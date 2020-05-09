@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <h1>Rhymesaurus: The Rhyming Thesaurus</h1>
+    <router-link to="/rhymesaurus">Rhymesaurus</router-link> |
+    <router-link to="/associated">Associated Words</router-link>
     <router-view/>
   </div>
 </template>
